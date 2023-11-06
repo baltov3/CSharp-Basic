@@ -1,0 +1,22 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string firstname = Console.ReadLine();
+            int prject = int.Parse(Console.ReadLine());
+            int a = 3;
+            int b = a * prject;
+            Console.WriteLine($"The architect {firstname} will need {b} hours to complete {prject} project/s.");
+
+
+
+
+
+
+        }
+    }
+}
