@@ -1,0 +1,19 @@
+using System;
+
+namespace T02_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // First input 
+            int SideA = int.Parse (Console.ReadLine() );
+            // Second imput 
+            int SideB = int.Parse(Console.ReadLine());
+            // Aritmetic operation
+            int result = SideA * SideB;
+            // Output from the result 
+            Console.WriteLine(result);
+        }
+    }
+}
