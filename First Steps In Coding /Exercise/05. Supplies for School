@@ -1,0 +1,28 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int pencils = int.Parse(Console.ReadLine());
+            int marks = int.Parse(Console.ReadLine());
+            int perp = int.Parse(Console.ReadLine());
+            int reduction = int.Parse(Console.ReadLine());
+            double pencil = 5.80;
+            double mark = 7.20;
+            double per = 1.20;
+            double b = (pencil*pencils+mark*marks+perp*per)*reduction*0.01;
+            double c = (pencil * pencils + mark * marks + perp * per) - b;
+            Console.WriteLine(c);
+
+
+
+
+
+
+        }
+    }
+}
