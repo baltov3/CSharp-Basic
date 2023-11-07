@@ -1,0 +1,22 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            double radians = double.Parse(Console.ReadLine());
+           
+            double b = radians *180/Math.PI;
+            Console.WriteLine(b);
+
+
+
+
+
+
+        }
+    }
+}
