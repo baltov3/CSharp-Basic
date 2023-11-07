@@ -1,0 +1,20 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int countOfFoodForDog = int.Parse(Console.ReadLine());
+            int countOfFoodForCat = int.Parse(Console.ReadLine());
+            double priceOfFoodForDog = 2.5;
+            double priceOfFoodForCat = 4;
+            double sum = countOfFoodForCat * priceOfFoodForCat + countOfFoodForDog * priceOfFoodForDog;
+            Console.WriteLine($"{sum} lv.");
+
+
+        }
+    }
+}
+
