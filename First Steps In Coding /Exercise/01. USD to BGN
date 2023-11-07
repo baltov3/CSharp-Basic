@@ -1,0 +1,22 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            double usa = double.Parse(Console.ReadLine());
+            double bg = 1.79549;
+            double b = bg * usa;
+            Console.WriteLine(b);
+
+
+
+
+
+
+        }
+    }
+}
