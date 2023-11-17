@@ -1,0 +1,31 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int chick = int.Parse(Console.ReadLine());
+            int fish = int.Parse(Console.ReadLine());
+            int veg = int.Parse(Console.ReadLine());
+            double chic = 10.35 ;
+            double fishs = 12.40 ;
+            double vega = 8.15 ;
+            double dessert = (chick * chic + fishs * fish + veg * vega) * 0.2;
+            double dessertsa = (chick * chic + fishs * fish + veg * vega + dessert) + 2.5;
+            Console.WriteLine(dessertsa);
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
