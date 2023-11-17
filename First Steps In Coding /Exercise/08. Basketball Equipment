@@ -1,0 +1,29 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int price = int.Parse(Console.ReadLine());
+            double shoes = price -(price * 0.4);
+            double top = shoes -(shoes * 0.2);
+            double ball = top/4;
+            double acc = ball /5;
+            double c = shoes + ball + top + acc + price;
+            Console.WriteLine(c);
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
