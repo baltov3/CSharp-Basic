@@ -1,0 +1,54 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        string figureType = Console.ReadLine().ToLower();
+
+        // Пресмятане на лицето в зависимост от вида на фигурата
+        double area = 0;
+
+        switch (figureType)
+        {
+            case "square":
+               
+                double sideSquare = double.Parse(Console.ReadLine());
+                area = sideSquare * sideSquare;
+                break;
+
+            case "rectangle":
+            
+                double lengthRectangle = double.Parse(Console.ReadLine());
+              
+                double widthRectangle = double.Parse(Console.ReadLine());
+                area = lengthRectangle * widthRectangle;
+                break;
+
+            case "circle":
+               
+                double radiusCircle = double.Parse(Console.ReadLine());
+                area = Math.PI * radiusCircle * radiusCircle;
+                break;
+
+            case "triangle":
+              
+                double sideTriangle = double.Parse(Console.ReadLine());
+               
+                double heightTriangle = double.Parse(Console.ReadLine());
+                area = 0.5 * sideTriangle * heightTriangle;
+                break;
+
+            default:
+           
+                return;
+        }
+
+        // Извеждане на резултата, закръглен до 3 цифри след десетичната запетая
+        Console.WriteLine($"{area:F3}");
+
+        // Изчакване на потребителски вход преди затваряне на конзолата
+        Console.ReadLine();
+    }
+}
