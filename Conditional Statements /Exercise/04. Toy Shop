@@ -1,0 +1,49 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на цената на екскурзията и броя на всеки вид играчка
+        double excursionPrice = double.Parse(Console.ReadLine());
+        int puzzlesCount = int.Parse(Console.ReadLine());
+        int dollsCount = int.Parse(Console.ReadLine());
+        int teddyBearsCount = int.Parse(Console.ReadLine());
+        int minionsCount = int.Parse(Console.ReadLine());
+        int trucksCount = int.Parse(Console.ReadLine());
+
+        // Цени на играчките
+        double puzzlePrice = 2.60;
+        double dollPrice = 3.00;
+        double teddyBearPrice = 4.10;
+        double minionPrice = 8.20;
+        double truckPrice = 2.00;
+
+        // Обща цена на поръчката
+        double totalPrice = puzzlesCount * puzzlePrice +
+                            dollsCount * dollPrice +
+                            teddyBearsCount * teddyBearPrice +
+                            minionsCount * minionPrice +
+                            trucksCount * truckPrice;
+
+        // Отстъпка за поръчки от 50 и повече играчки
+        if ((puzzlesCount + dollsCount + teddyBearsCount + minionsCount + trucksCount) >= 50)
+        {
+            totalPrice *= 0.75; // 25% отстъпка
+        }
+
+        // Дадените наем и останали пари след отстъпката
+        double rent = totalPrice * 0.1;
+        double remainingMoney = totalPrice - rent;
+
+        // Проверка дали парите са достатъчни за екскурзия
+        if (remainingMoney >= excursionPrice)
+        {
+            Console.WriteLine($"Yes! {remainingMoney - excursionPrice:F2} lv left.");
+        }
+        else
+        {
+            Console.WriteLine($"Not enough money! {excursionPrice - remainingMoney:F2} lv needed.");
+        }
+    }
+}
