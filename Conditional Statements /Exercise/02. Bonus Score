@@ -1,0 +1,55 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на начални точки
+        Console.Write("Въведете начални точки: ");
+        double initialPoints = double.Parse(Console.ReadLine());
+
+        // Изчисляване на бонус точките
+        double bonusPoints = CalculateBonusPoints(initialPoints);
+
+        // Изчисляване на общия брой точки
+        double totalPoints = initialPoints + bonusPoints;
+
+        // Извеждане на резултата
+        Console.WriteLine($"Бонус точки: {bonusPoints}");
+        Console.WriteLine($"Общ брой точки: {totalPoints}");
+    }
+
+    static double CalculateBonusPoints(double initialPoints)
+    {
+        double bonusPoints = 0;
+
+        // Проверка за числа до 100 включително
+        if (initialPoints <= 100)
+        {
+            bonusPoints += 5;
+        }
+        // Проверка за числа над 100
+        else if (initialPoints > 100 && initialPoints <= 1000)
+        {
+            bonusPoints += (double)(initialPoints * 0.2);
+        }
+        // Проверка за числа над 1000
+        else if (initialPoints > 1000)
+        {
+            bonusPoints += (double)(initialPoints * 0.1);
+        }
+
+        // Допълнителни бонус точки за четно число
+        if (initialPoints % 2 == 0)
+        {
+            bonusPoints += 1;
+        }
+        // Допълнителни бонус точки за число, завършващо на 5
+        if (initialPoints % 10 == 5)
+        {
+            bonusPoints += 2;
+        }
+
+        return bonusPoints;
+    }
+}
