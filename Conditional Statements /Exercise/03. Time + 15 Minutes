@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на час и минути от потребителя
+     
+        int hour = int.Parse(Console.ReadLine());
+
+       
+        int minutes = int.Parse(Console.ReadLine());
+
+        // Изчисляване на часа след 15 минути
+        int totalMinutes = hour * 60 + minutes + 15;
+        int newHour = (totalMinutes / 60) % 24;
+        int newMinutes = totalMinutes % 60;
+
+        // Извеждане на резултата в желания формат
+        Console.WriteLine($"{newHour:D2}:{newMinutes:D2}");
+    }
+}
