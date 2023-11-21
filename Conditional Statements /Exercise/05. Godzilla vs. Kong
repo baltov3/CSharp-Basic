@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на бюджета, броя на статистите и цената за облекло на един статист
+        double budget = double.Parse(Console.ReadLine());
+        int actorsCount = int.Parse(Console.ReadLine());
+        double clothingPricePerActor = double.Parse(Console.ReadLine());
+
+        // Изчисляване на разходите за декор и облекло
+        double decorCost = budget * 0.1;
+        double clothingCost = actorsCount * clothingPricePerActor;
+
+        // При повече от 150 статиста има отстъпка 10% за облеклото
+        if (actorsCount > 150)
+        {
+            clothingCost *= 0.9; // 10% отстъпка
+        }
+
+        // Общи разходи
+        double totalCost = decorCost + clothingCost;
+
+        // Проверка дали разходите са по-големи от бюджета
+        if (totalCost > budget)
+        {
+            Console.WriteLine("Not enough money!");
+            Console.WriteLine($"Wingard needs {totalCost - budget:F2} leva more.");
+        }
+        else
+        {
+            Console.WriteLine("Action!");
+            Console.WriteLine($"Wingard starts filming with {budget - totalCost:F2} leva left.");
+        }
+    }
+}
