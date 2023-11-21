@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на данните
+        string seriesName = Console.ReadLine();
+        int episodeDuration = int.Parse(Console.ReadLine());
+        int breakDuration = int.Parse(Console.ReadLine());
+
+        // Изчисляване на времето за обяд и времето за отдих
+        double lunchTime = breakDuration / 8.0;
+        double relaxTime = breakDuration / 4.0;
+
+        // Общо време за гледане на епизод и време за отдих
+        double totalWatchTime = episodeDuration + lunchTime + relaxTime;
+
+        // Проверка дали има достатъчно време
+        if (totalWatchTime <= breakDuration)
+        {
+            int leftFreeTime = (int)Math.Ceiling(breakDuration - totalWatchTime);
+            Console.WriteLine($"You have enough time to watch {seriesName} and left with {leftFreeTime} minutes free time.");
+        }
+        else
+        {
+            int neededTime = (int)Math.Ceiling(totalWatchTime - breakDuration);
+            Console.WriteLine($"You don't have enough time to watch {seriesName}, you need {neededTime} more minutes.");
+        }
+    }
+}
