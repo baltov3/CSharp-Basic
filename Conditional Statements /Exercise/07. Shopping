@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на бюджета и броя на видеокартите, процесорите и рам паметта
+        double budget = double.Parse(Console.ReadLine());
+        int videoCardsCount = int.Parse(Console.ReadLine());
+        int processorsCount = int.Parse(Console.ReadLine());
+        int ramCount = int.Parse(Console.ReadLine());
+
+        // Цени на материалите
+        double videoCardPrice = 250.0;
+        double processorPricePercentage = 0.35; // 35% от цената на видеокартите
+        double ramPricePercentage = 0.10; // 10% от цената на видеокартите
+
+        // Изчисляване на общата цена на материалите
+        double videoCardsTotalPrice = videoCardPrice * videoCardsCount;
+        double processorsTotalPrice = videoCardsTotalPrice * processorPricePercentage*processorsCount;
+        double ramTotalPrice = videoCardsTotalPrice * ramPricePercentage*ramCount;
+        double totalCost = videoCardsTotalPrice + processorsTotalPrice + ramTotalPrice;
+
+        // Проверка за отстъпка
+        if (videoCardsCount > processorsCount)
+        {
+            totalCost *= 0.85; // 15% отстъпка
+        }
+
+        // Проверка дали бюджета е достатъчен
+        if (totalCost <= budget)
+        {
+            Console.WriteLine($"You have {budget - totalCost:F2} leva left!");
+        }
+        else
+        {
+            Console.WriteLine($"Not enough money! You need {totalCost - budget:F2} leva more!");
+        }
+    }
+}
