@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Въвеждане на рекорда, разстоянието и времето за 1 метър
+        double worldRecord = double.Parse(Console.ReadLine());
+        double distance = double.Parse(Console.ReadLine());
+        double timePerMeter = double.Parse(Console.ReadLine());
+
+        // Изчисляване на времето за плуване на цялото разстояние
+        double totalSwimTime = distance * timePerMeter;
+
+        // Изчисляване на забавянето поради съпротивлението на водата
+        double delay = Math.Floor(distance / 15) * 12.5;
+
+        // Изчисляване на общото време със забавянето
+        double totalTime = totalSwimTime + delay;
+
+        // Проверка дали Иван е подобрил Световния рекорд
+        if (totalTime < worldRecord)
+        {
+            Console.WriteLine($"Yes, he succeeded! The new world record is {totalTime:F2} seconds.");
+        }
+        else
+        {
+            Console.WriteLine($"No, he failed! He was {totalTime - worldRecord:F2} seconds slower.");
+        }
+    }
+}
