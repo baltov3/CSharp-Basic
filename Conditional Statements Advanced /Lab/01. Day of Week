@@ -1,0 +1,38 @@
+class Program
+{
+    static void Main()
+    {
+     
+        if (int.TryParse(Console.ReadLine(), out int userInput))
+        {
+            string dayOfWeek = GetDayOfWeek(userInput);
+            if (dayOfWeek != null)
+            {
+                Console.WriteLine($"{dayOfWeek}");
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+
+    static string GetDayOfWeek(int dayNumber)
+    {
+        switch (dayNumber)
+        {
+            case 1: return "Monday";
+            case 2: return "Tuesday";
+            case 3: return "Wednesday";
+            case 4: return "Thursday";
+            case 5: return "Friday";
+            case 6: return "Saturday";
+            case 7: return "Sunday";
+            default: return null;
+        }
+    }
+}
