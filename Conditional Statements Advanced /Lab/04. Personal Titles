@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        if (int.TryParse(Console.ReadLine(), out int age))
+        {
+            
+            char gender = Console.ReadLine().ToLower()[0]; // Вземаме само първия символ и го превръщаме в малка буква
+
+            string title = DetermineTitle(age, gender);
+
+            Console.WriteLine($"{title}");
+        }
+        else
+        {
+            Console.WriteLine("Master");
+        }
+    }
+
+    static string DetermineTitle(int age, char gender)
+    {
+        if (gender == 'm')
+        {
+            return age >= 16 ? "Mr." : "Master";
+        }
+        else if (gender == 'f')
+        {
+            return age >= 16 ? "Ms." : "Miss";
+        }
+        else
+        {
+            return "Master";
+        }
+    }
+}
