@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string dayOfWeek = Console.ReadLine().ToLower(); // Превръщаме въведения текст в малки букви
+
+        // Проверка за работен или почивен ден
+        if (IsWorkingDay(dayOfWeek))
+        {
+            Console.WriteLine("Working day");
+        }
+        else if (IsWeekend(dayOfWeek))
+        {
+            Console.WriteLine("Weekend");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+
+    // Проверка за работен ден
+    static bool IsWorkingDay(string day)
+    {
+        string[] workingDays = { "monday", "tuesday", "wednesday", "thursday", "friday" };
+        return Array.Exists(workingDays, d => d == day);
+    }
+
+    // Проверка за почивен ден
+    static bool IsWeekend(string day)
+    {
+        string[] weekendDays = { "saturday", "sunday" };
+        return Array.Exists(weekendDays, d => d == day);
+    }
+}
