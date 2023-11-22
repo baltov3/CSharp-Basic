@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string animalName = Console.ReadLine().ToLower(); // Превръщаме въведеното име в малки букви за по-голяма гъвкавост
+
+        string animalClass = DetermineAnimalClass(animalName);
+
+        Console.WriteLine($"{animalClass}");
+    }
+
+    static string DetermineAnimalClass(string name)
+    {
+        switch (name)
+        {
+            case "dog":
+                return "mammal";
+            case "crocodile":
+            case "tortoise":
+            case "snake":
+                return "reptile";
+            default:
+                return "unknown";
+        }
+    }
+}
