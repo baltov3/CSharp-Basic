@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string dayOfWeek = Console.ReadLine().ToLower();
+
+        int ticketPrice = GetTicketPrice(dayOfWeek);
+
+        if (ticketPrice != -1)
+        {
+            Console.WriteLine($"{ticketPrice}");
+        }
+        else
+        {
+            Console.WriteLine("Грешка: Невалиден ден от седмицата.");
+        }
+    }
+
+    static int GetTicketPrice(string dayOfWeek)
+    {
+        switch (dayOfWeek)
+        {
+            case "monday":
+            case "tuesday":
+            case "friday":
+                return 12;
+            case "wednesday":
+            case "thursday":
+                return 14;
+            case "saturday":
+            case "sunday":
+                return 16;
+            default:
+                return -1; // Грешка за невалиден ден от седмицата
+        }
+    }
+}
