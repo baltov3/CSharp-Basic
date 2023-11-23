@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+     
+        if (int.TryParse(Console.ReadLine(), out int hour))
+        {
+          
+            string dayOfWeek = Console.ReadLine().ToLower();
+
+            if (IsOfficeOpen(hour, dayOfWeek))
+            {
+                Console.WriteLine("open");
+            }
+            else
+            {
+                Console.WriteLine("closed");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Грешка: Невалиден час. Моля, въведете цяло число.");
+        }
+    }
+
+    static bool IsOfficeOpen(int hour, string dayOfWeek)
+    {
+        // Проверка за работно време от понеделник до събота от 10 до 18 часа
+        return (dayOfWeek != "sunday") && (hour >= 10 && hour <= 18);
+    }
+}
