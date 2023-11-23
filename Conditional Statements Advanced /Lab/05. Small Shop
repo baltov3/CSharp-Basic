@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+      
+        string product = Console.ReadLine().ToLower();
+
+       
+        string city = Console.ReadLine().ToLower();
+
+       
+        if (decimal.TryParse(Console.ReadLine(), out decimal quantity) && quantity > 0)
+        {
+            decimal price = CalculatePrice(product, city);
+            if (price != -1)
+            {
+                decimal totalPrice = price * quantity;
+                Console.WriteLine($"{totalPrice:F2} лв.");
+            }
+            else
+            {
+                Console.WriteLine("Грешка: Невалиден продукт или град.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Грешка: Невалидно количество. Моля, въведете положително число.");
+        }
+    }
+
+    static decimal CalculatePrice(string product, string city)
+    {
+        switch (city)
+        {
+            case "sofia":
+                return GetProductPrice(product, 0.50m, 0.80m, 1.20m, 1.45m, 1.60m);
+            case "plovdiv":
+                return GetProductPrice(product, 0.40m, 0.70m, 1.15m, 1.30m, 1.50m);
+            case "varna":
+                return GetProductPrice(product, 0.45m, 0.70m, 1.10m, 1.35m, 1.55m);
+            default:
+                return -1; // Грешка за невалиден град
+        }
+    }
+
+    static decimal GetProductPrice(string product, params decimal[] prices)
+    {
+        switch (product)
+        {
+            case "coffee": return prices[0];
+            case "water": return prices[1];
+            case "beer": return prices[2];
+            case "sweets": return prices[3];
+            case "peanuts": return prices[4];
+            default: return -1; // Грешка за невалиден продукт
+        }
+    }
+}
