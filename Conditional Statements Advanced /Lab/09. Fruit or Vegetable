@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string productName = Console.ReadLine().ToLower();
+
+        string productType = DetermineProductType(productName);
+
+        Console.WriteLine($"{productType}");
+    }
+
+    static string DetermineProductType(string productName)
+    {
+        switch (productName)
+        {
+            case "banana":
+            case "apple":
+            case "kiwi":
+            case "cherry":
+            case "lemon":
+            case "grapes":
+                return "fruit";
+            case "tomato":
+            case "cucumber":
+            case "pepper":
+            case "carrot":
+                return "vegetable";
+            default:
+                return "unknown";
+        }
+    }
+}
