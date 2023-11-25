@@ -1,0 +1,68 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string flowerType = Console.ReadLine();
+        int flowerCount = int.Parse(Console.ReadLine());
+        int budget = int.Parse(Console.ReadLine());
+
+        double pricePerFlower = 0;
+
+        switch (flowerType)
+        {
+            case "Roses":
+                pricePerFlower = 5.00;
+                if (flowerCount > 80)
+                {
+                    pricePerFlower *= 0.90; // 10% discount
+                }
+                break;
+            case "Dahlias":
+                pricePerFlower = 3.80;
+                if (flowerCount > 90)
+                {
+                    pricePerFlower *= 0.85; // 15% discount
+                }
+                break;
+            case "Tulips":
+                pricePerFlower = 2.80;
+                if (flowerCount > 80)
+                {
+                    pricePerFlower *= 0.85; // 15% discount
+                }
+                break;
+            case "Narcissus":
+                pricePerFlower = 3.00;
+                if (flowerCount < 120)
+                {
+                    pricePerFlower *= 1.15; // 15% price increase
+                }
+                break;
+            case "Gladiolus":
+                pricePerFlower = 2.50;
+                if (flowerCount < 80)
+                {
+                    pricePerFlower *= 1.20; // 20% price increase
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid flower type");
+                return;
+        }
+
+        double totalCost = flowerCount * pricePerFlower;
+
+        if (totalCost <= budget)
+        {
+            double leftMoney = budget - totalCost;
+            Console.WriteLine($"Hey, you have a great garden with {flowerCount} {flowerType} and {leftMoney:F2} leva left.");
+        }
+        else
+        {
+            double neededMoney = totalCost - budget;
+            Console.WriteLine($"Not enough money, you need {neededMoney:F2} leva more.");
+        }
+    }
+}
