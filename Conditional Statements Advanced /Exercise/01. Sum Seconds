@@ -1,0 +1,39 @@
+using System;
+
+namespace T01.HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int Firsttime = int.Parse(Console.ReadLine());
+            int Secondtime = int.Parse(Console.ReadLine());
+            int Thirdtime = int.Parse(Console.ReadLine());
+            int totaltime = Firsttime + Secondtime + Thirdtime;
+            int minutes = totaltime / 60;
+            int seconds = totaltime % 60;
+
+            if (seconds<=9)
+            {
+                Console.WriteLine($"{minutes}:0{seconds}");
+            }
+            else
+            {
+                Console.WriteLine($"{minutes}:{seconds}");
+            }
+           
+           
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
