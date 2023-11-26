@@ -1,0 +1,61 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int days = int.Parse(Console.ReadLine());
+        string roomType = Console.ReadLine();
+        string feedback = Console.ReadLine();
+
+        double price = 0;
+
+        switch (roomType)
+        {
+            case "room for one person":
+                price = 18.00 * (days - 1);
+                break;
+            case "apartment":
+                price = 25.00 * (days - 1);
+                if (days < 10)
+                {
+                    price *= 0.70; // 30% discount
+                }
+                else if (days <= 15)
+                {
+                    price *= 0.65; // 35% discount
+                }
+                else
+                {
+                    price *= 0.50; // 50% discount
+                }
+                break;
+            case "president apartment":
+                price = 35.00 * (days - 1);
+                if (days < 10)
+                {
+                    price *= 0.90; // 10% discount
+                }
+                else if (days <= 15)
+                {
+                    price *= 0.85; // 15% discount
+                }
+                else
+                {
+                    price *= 0.80; // 20% discount
+                }
+                break;
+        }
+
+        if (feedback == "positive")
+        {
+            price += price * 0.25; // 25% increase
+        }
+        else if (feedback == "negative")
+        {
+            price *= 0.90; // 10% discount
+        }
+
+        Console.WriteLine($"{price:F2}");
+    }
+}
