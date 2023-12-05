@@ -1,0 +1,55 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int groupsCount = int.Parse(Console.ReadLine());
+        int totalClimbers = 0;
+
+        int musalaClimbers = 0;
+        int montBlancClimbers = 0;
+        int kilimanjaroClimbers = 0;
+        int k2Climbers = 0;
+        int everestClimbers = 0;
+
+        for (int i = 0; i < groupsCount; i++)
+        {
+            int groupSize = int.Parse(Console.ReadLine());
+            totalClimbers += groupSize;
+
+            if (groupSize <= 5)
+            {
+                musalaClimbers += groupSize;
+            }
+            else if (groupSize <= 12)
+            {
+                montBlancClimbers += groupSize;
+            }
+            else if (groupSize <= 25)
+            {
+                kilimanjaroClimbers += groupSize;
+            }
+            else if (groupSize <= 40)
+            {
+                k2Climbers += groupSize;
+            }
+            else
+            {
+                everestClimbers += groupSize;
+            }
+        }
+
+        double musalaPercent = musalaClimbers / (double)totalClimbers * 100;
+        double montBlancPercent = montBlancClimbers / (double)totalClimbers * 100;
+        double kilimanjaroPercent = kilimanjaroClimbers / (double)totalClimbers * 100;
+        double k2Percent = k2Climbers / (double)totalClimbers * 100;
+        double everestPercent = everestClimbers / (double)totalClimbers * 100;
+
+        Console.WriteLine($"{musalaPercent:f2}%");
+        Console.WriteLine($"{montBlancPercent:f2}%");
+        Console.WriteLine($"{kilimanjaroPercent:f2}%");
+        Console.WriteLine($"{k2Percent:f2}%");
+        Console.WriteLine($"{everestPercent:f2}%");
+    }
+}
