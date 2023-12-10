@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = Console.ReadLine();
+
+        if (input == "Stop")
+        {
+            Console.WriteLine("No numbers entered.");
+            return;
+        }
+
+        int maxNumber = int.Parse(input);
+
+        while (true)
+        {
+            input = Console.ReadLine();
+
+            if (input == "Stop")
+            {
+                break;
+            }
+
+            int currentNumber = int.Parse(input);
+
+            if (currentNumber > maxNumber)
+            {
+                maxNumber = currentNumber;
+            }
+        }
+
+        Console.WriteLine(maxNumber);
+    }
+}
