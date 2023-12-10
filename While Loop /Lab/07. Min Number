@@ -1,0 +1,29 @@
+using System;
+
+namespace ConsoleApp13
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+        
+
+
+            string input = Console.ReadLine();
+            int min = int.MaxValue;
+            while (input!="Stop")
+            {
+                int inputAsNumber = int.Parse(input);
+                if (inputAsNumber<min)
+                {
+                    min = inputAsNumber;
+                }
+
+                input = Console.ReadLine();
+            }
+            Console.WriteLine(min);
+        }
+    }
+}
