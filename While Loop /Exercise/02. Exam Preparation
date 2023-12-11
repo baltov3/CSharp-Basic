@@ -1,0 +1,62 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int entercountOfGradeLessThanFour = int.Parse(Console.ReadLine());
+        double averageGrade = 0;
+        double numberOfProblems = 0;
+        string lastProblem = string.Empty;
+        int countOfGradeLessThanFour = 0;
+
+
+
+
+
+        while (true)
+        {
+            string input = Console.ReadLine();
+           
+           
+            if (input == "Enough")
+            {
+                Console.WriteLine($"Average score: {(averageGrade/numberOfProblems):f2}");
+                Console.WriteLine($"Number of problems: {numberOfProblems}");
+                Console.WriteLine($"Last problem: {lastProblem}");
+                break;
+            }
+            lastProblem = input;
+            double grade = double.Parse(Console.ReadLine());
+            
+            averageGrade += grade;
+            if (grade <= 4)
+            {
+                countOfGradeLessThanFour++;
+            }
+            if (countOfGradeLessThanFour==entercountOfGradeLessThanFour)
+            {
+                Console.WriteLine($"You need a break, {entercountOfGradeLessThanFour} poor grades.");
+                break;
+            }
+            numberOfProblems++;
+            
+
+            
+
+           
+
+      
+        }
+        
+        
+  
+
+
+
+
+
+
+
+    }
+}
