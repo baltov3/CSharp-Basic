@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int goal = 10000;
+        int steps = 0;
+
+        while (steps < goal)
+        {
+            string input = Console.ReadLine();
+
+            if (input == "Going home")
+            {
+                int additionalSteps = int.Parse(Console.ReadLine());
+                steps += additionalSteps;
+                break;
+            }
+
+            int currentSteps = int.Parse(input);
+            steps += currentSteps;
+        }
+
+        if (steps >= goal)
+        {
+            int stepsOverGoal = steps - goal;
+            Console.WriteLine("Goal reached! Good job!");
+            Console.WriteLine($"{stepsOverGoal} steps over the goal!");
+        }
+        else
+        {
+            int stepsNeeded = goal - steps;
+            Console.WriteLine($"{stepsNeeded} more steps to reach goal.");
+        }
+    }
+}
