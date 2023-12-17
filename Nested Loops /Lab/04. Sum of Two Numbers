@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int start = int.Parse(Console.ReadLine());
+        int end = int.Parse(Console.ReadLine());
+        int magicNumber = int.Parse(Console.ReadLine());
+
+        int combinationsCount = 0;
+        bool foundCombination = false;
+
+        for (int i = start; i <= end; i++)
+        {
+            for (int j = start; j <= end; j++)
+            {
+                combinationsCount++;
+
+                if (i + j == magicNumber)
+                {
+                    Console.WriteLine($"Combination N:{combinationsCount} ({i} + {j} = {magicNumber})");
+                    foundCombination = true;
+                    break;
+                }
+            }
+
+            if (foundCombination)
+            {
+                break;
+            }
+        }
+
+        if (!foundCombination)
+        {
+            Console.WriteLine($"{combinationsCount} combinations - neither equals {magicNumber}");
+        }
+    }
+}
