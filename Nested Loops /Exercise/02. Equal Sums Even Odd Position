@@ -1,0 +1,52 @@
+int firstNumber = int.Parse(Console.ReadLine());
+int secondNumber = int.Parse(Console.ReadLine());
+
+
+
+for (int i = firstNumber; i < secondNumber; i++)
+{
+    long oddSum =GetSumOfOddPositionDigits(i);
+    long evenSum =GetSumOfEvenPositionDigits(i);
+    
+    if (oddSum == evenSum)
+    {
+        Console.Write(i+ " ");
+    }
+
+}
+
+
+static long GetSumOfEvenPositionDigits(int number)
+{
+    // Convert the number to a string
+    string numberStr = number.ToString();
+
+    // Initialize sum
+    long sum = 0;
+
+    // Iterate through digits at even positions
+    for (int i = 1; i < numberStr.Length; i += 2)
+    {
+        // Convert the character at even position to an integer and add to sum
+        sum += Convert.ToInt64(numberStr[i].ToString());
+    }
+
+    return sum;
+}
+static long GetSumOfOddPositionDigits(long number)
+{
+    // Convert the number to a string
+    string numberStr = number.ToString();
+
+    // Initialize sum
+    long sum = 0;
+
+    // Iterate through digits at odd positions
+    for (int i = 0; i < numberStr.Length; i += 2)
+    {
+        // Convert the character at odd position to an integer and add to sum
+        sum += Convert.ToInt64(numberStr[i].ToString());
+    }
+
+    return sum;
+}
